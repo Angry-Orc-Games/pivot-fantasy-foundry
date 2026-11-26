@@ -225,7 +225,7 @@ export function aggregateCharacterEffects(
   return summary;
 }
 
-// Best bonus plus every penalty. https://github.com/Angry-Orc-Games/pivot-foundry/pull/109#issuecomment-6640416282
+// Best bonus plus every penalty. https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/pull/109#issuecomment-6640416282
 // Change the next line to the worst penalty only if Ken rules that way.
 function gearStatTotal(bestBonus: number, penalties: readonly number[]): number {
   const penaltyTotal = penalties.reduce((sum, amount) => sum + amount, 0);

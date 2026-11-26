@@ -13,7 +13,7 @@ const recordScript = fileURLToPath(
 );
 const deployScript = fileURLToPath(new URL("../../scripts/deploy-package.mjs", import.meta.url));
 
-const repo = "Angry-Orc-Games/pivot-foundry";
+const repo = "Angry-Orc-Games/pivot-fantasy-foundry";
 const server = "https://github.com";
 const head = "a".repeat(40);
 const runId = "4242";

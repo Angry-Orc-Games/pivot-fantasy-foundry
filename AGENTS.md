@@ -54,7 +54,7 @@ Runtime Secrets: `FOUNDRY_ADMIN_KEY` (local-only password), `FOUNDRY_LICENSE_KEY
 
 ### Issue tracker
 
-Issues are tracked in GitHub Issues for Angry-Orc-Games/pivot-foundry via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Issues are tracked in GitHub Issues for Angry-Orc-Games/pivot-fantasy-foundry via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 

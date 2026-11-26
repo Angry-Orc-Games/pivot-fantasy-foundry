@@ -25,7 +25,7 @@ const SAME = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
 const FORK = "cccccccccccccccccccccccccccccccccccccccc";
 const OTHER = "dddddddddddddddddddddddddddddddddddddddd";
 const TOKEN = "super-secret-token";
-const RUN_URL = "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242";
+const RUN_URL = "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242";
 
 const CURL_STUB = `#!/bin/sh
 url=
@@ -158,7 +158,7 @@ async function withStub(extra = {}) {
       labels: [{ name: "e2e-nightly" }],
       head: {
         sha: SAME,
-        repo: { full_name: "Angry-Orc-Games/pivot-foundry", fork: false },
+        repo: { full_name: "Angry-Orc-Games/pivot-fantasy-foundry", fork: false },
       },
     },
     {
@@ -167,7 +167,7 @@ async function withStub(extra = {}) {
       labels: [{ name: "e2e-nightly" }],
       head: {
         sha: FORK,
-        repo: { full_name: "someone/pivot-foundry", fork: true },
+        repo: { full_name: "someone/pivot-fantasy-foundry", fork: true },
       },
     },
     {
@@ -176,7 +176,7 @@ async function withStub(extra = {}) {
       labels: [{ name: "docs" }],
       head: {
         sha: OTHER,
-        repo: { full_name: "Angry-Orc-Games/pivot-foundry", fork: false },
+        repo: { full_name: "Angry-Orc-Games/pivot-fantasy-foundry", fork: false },
       },
     },
     {
@@ -185,7 +185,7 @@ async function withStub(extra = {}) {
       labels: [{ name: "e2e-nightly" }],
       head: {
         sha: OTHER,
-        repo: { full_name: "Angry-Orc-Games/pivot-foundry", fork: false },
+        repo: { full_name: "Angry-Orc-Games/pivot-fantasy-foundry", fork: false },
       },
     },
   ];
@@ -202,7 +202,7 @@ async function withStub(extra = {}) {
     GITHUB_API_URL: "https://api.github.test",
     GITHUB_TOKEN: TOKEN,
     E2E_STUB_DIR: stub,
-    E2E_REPOSITORY: "Angry-Orc-Games/pivot-foundry",
+    E2E_REPOSITORY: "Angry-Orc-Games/pivot-fantasy-foundry",
     E2E_EVENT: extra.event ?? "schedule",
     E2E_REF: extra.ref ?? "",
     ...extra.env,
@@ -241,7 +241,7 @@ describe("nightly target list", () => {
       { sha: MAIN, name: "main" },
       { sha: SAME, name: "pr-80" },
     ]);
-    expect(urls).toContain("/repos/Angry-Orc-Games/pivot-foundry/labels");
+    expect(urls).toContain("/repos/Angry-Orc-Games/pivot-fantasy-foundry/labels");
     expect(JSON.parse(body).name).toBe("e2e-nightly");
     expect(body).not.toContain("issue");
   });
@@ -388,13 +388,13 @@ describe("nightly check run", () => {
       head_sha: SAME,
       status: "completed",
       conclusion: "success",
-      details_url: "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242",
+      details_url: "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242",
       output: {
         title: "Foundry E2E (nightly)",
-        summary: `Foundry started for E2E commit ${SAME}.\nhttps://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242`,
+        summary: `Foundry started for E2E commit ${SAME}.\nhttps://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242`,
       },
     });
-    expect(urls).toContain("/repos/Angry-Orc-Games/pivot-foundry/check-runs");
+    expect(urls).toContain("/repos/Angry-Orc-Games/pivot-fantasy-foundry/check-runs");
     expect(result.stdout + result.stderr).not.toContain(TOKEN);
   });
 });
@@ -485,7 +485,7 @@ async function publishFixture({ doc, artifacts, matrix = "failure" } = {}) {
     GITHUB_API_URL: "https://api.github.test",
     GITHUB_TOKEN: TOKEN,
     E2E_STUB_DIR: stub,
-    E2E_REPOSITORY: "Angry-Orc-Games/pivot-foundry",
+    E2E_REPOSITORY: "Angry-Orc-Games/pivot-fantasy-foundry",
     E2E_TARGETS: JSON.stringify([{ sha: SAME, name: "pr-80" }]),
     E2E_RUN_ID: "4242",
     E2E_MATRIX_RESULT: matrix,
@@ -581,11 +581,11 @@ describe("nightly failure results", () => {
     expect(body.conclusion).toBe("failure");
     expect(body.head_sha).toBe(SAME);
     expect(body.details_url).toBe(
-      "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242",
+      "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242",
     );
     expect(body.output.summary).toContain("cancelled or timed out");
     expect(body.output.summary).toContain(
-      "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242",
+      "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242",
     );
     expect(body.output.summary).not.toContain("Skipped");
     expect(ctx.urls).toContain("/actions/runs/4242/artifacts");
@@ -609,11 +609,11 @@ describe("nightly failure results", () => {
       name: "Foundry E2E (nightly)",
       head_sha: SAME,
       conclusion: "failure",
-      details_url: "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242",
+      details_url: "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242",
     });
     expect(body.output.summary).toContain("License gate closed. Foundry was not started.");
     expect(body.output.summary).toContain(
-      "https://github.com/Angry-Orc-Games/pivot-foundry/actions/runs/4242",
+      "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/runs/4242",
     );
   });
 
@@ -1046,7 +1046,7 @@ describe("artifact download redirect", () => {
             SSL_CERT_FILE: join(dir, "ca.crt"),
             GITHUB_API_URL: `https://api.localtest.me:${apiPort}`,
             GITHUB_TOKEN: TOKEN,
-            E2E_REPOSITORY: "Angry-Orc-Games/pivot-foundry",
+            E2E_REPOSITORY: "Angry-Orc-Games/pivot-fantasy-foundry",
             E2E_TARGETS: JSON.stringify([{ sha: SAME, name: "pr-114" }]),
             E2E_RUN_ID: "4242",
             E2E_MATRIX_RESULT: "failure",

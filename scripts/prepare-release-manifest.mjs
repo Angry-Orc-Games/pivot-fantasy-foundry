@@ -19,8 +19,8 @@ if (!/^[0-9]+[.][0-9]+[.][0-9]+(?:[-.+][0-9A-Za-z.-]+)?$/.test(version)) {
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 
-if (typeof manifest.url !== "string" || !manifest.url.includes("/pivot-foundry")) {
-  throw new Error("system.json url must point at the pivot-foundry GitHub repository.");
+if (typeof manifest.url !== "string" || !manifest.url.includes("/pivot-fantasy-foundry")) {
+  throw new Error("system.json url must point at the pivot-fantasy-foundry GitHub repository.");
 }
 
 manifest.version = version;

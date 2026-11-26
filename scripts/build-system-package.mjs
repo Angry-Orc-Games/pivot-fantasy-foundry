@@ -14,7 +14,7 @@ execFileSync("npm", ["run", "build"], { cwd: root, stdio: "inherit" });
 const manifest = JSON.parse(await readFile(join(root, "system.json"), "utf8"));
 validateManifest(manifest);
 
-const stageRoot = await mkdtemp(join(tmpdir(), "pivot-foundry-package-"));
+const stageRoot = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-package-"));
 const stage = join(stageRoot, "system");
 
 try {

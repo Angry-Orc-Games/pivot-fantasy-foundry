@@ -1,7 +1,7 @@
 # Pivot Foundry — Remaining Product Work SDD Package
 
 Prepared: **2026-09-04**  
-Repository: `Angry-Orc-Games/pivot-foundry` (`main`, inspected 2026-09-04)  
+Repository: `Angry-Orc-Games/pivot-fantasy-foundry` (`main`, inspected 2026-09-04)  
 Foundry target: **v14**  
 Package id: **pivot-fantasy**
 
@@ -63,7 +63,7 @@ Inspected from the public repository on 2026-09-04:
 - `system.json`
 - repository README
 
-GitHub: https://github.com/Angry-Orc-Games/pivot-foundry
+GitHub: https://github.com/Angry-Orc-Games/pivot-fantasy-foundry
 
 ## Package contents
 

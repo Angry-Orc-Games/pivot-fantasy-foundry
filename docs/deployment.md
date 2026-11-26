@@ -51,7 +51,7 @@ Staging deploy runs only when CI completed because of a push to `main` in this r
 
 ## GitHub settings that cannot be set from files
 
-The same layout is used in `pivot-foundry` and `pivot-fantasy-monster-builder`. Environments match the two servers, so there is no E2E environment.
+The same layout is used in `pivot-fantasy-foundry` and `pivot-fantasy-monster-builder`. Environments match the two servers, so there is no E2E environment.
 
 **Repository secrets** (real-Foundry E2E, nightly):
 

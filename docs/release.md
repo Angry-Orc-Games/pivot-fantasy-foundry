@@ -43,7 +43,7 @@ git push origin v0.1.0
 Foundry installs use:
 
 ```text
-https://github.com/angry-orc-games/pivot-foundry/releases/latest/download/system.json
+https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/releases/latest/download/system.json
 ```
 
 To put the same zip on https://build.angryorcgames.com or https://foundry.angryorcgames.com, use [deployment.md](deployment.md).
