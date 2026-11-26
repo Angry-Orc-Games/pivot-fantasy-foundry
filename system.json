@@ -36,7 +36,7 @@
     }
   ],
   "packs": [],
-  "url": "https://github.com/angry-orc-games/pivot-foundry",
-  "manifest": "https://github.com/angry-orc-games/pivot-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/angry-orc-games/pivot-foundry/releases/latest/download/system.zip"
+  "url": "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry",
+  "manifest": "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/releases/latest/download/system.json",
+  "download": "https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/releases/latest/download/system.zip"
 }

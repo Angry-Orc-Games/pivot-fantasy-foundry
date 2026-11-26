@@ -45,7 +45,7 @@ function httpResponse({ status = 200, location, body = "zip-bytes" } = {}) {
 }
 
 async function captureDownload(fetchImpl) {
-  const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-dist-"));
+  const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-dist-"));
   const dest = join(dir, "foundry.zip");
   await downloadTo(secretUrl, dest, fetchImpl);
   return { dest, bytes: await readFile(dest, "utf8") };
@@ -81,7 +81,7 @@ describe("foundry release download", () => {
       calls.push({ url, init });
       return httpResponse();
     };
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-dist-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-dist-"));
     const originalLog = console.log;
     console.log = (...args) => {
       logs.push(args.join(" "));
@@ -111,7 +111,7 @@ describe("foundry release download", () => {
       calls.push({ url, init });
       return httpResponse();
     };
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-dist-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-dist-"));
 
     await downloadTo("https://cache.example/foundry.zip", join(dir, "foundry.zip"), fetchImpl);
 
@@ -156,7 +156,7 @@ describe("foundry release download", () => {
     const fetchImpl = async () => {
       throw new Error(`connect failed for ${secretUrl}`);
     };
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-dist-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-dist-"));
 
     await expect(downloadTo(secretUrl, join(dir, "foundry.zip"), fetchImpl)).rejects.toThrow(
       /Foundry download failed/,
@@ -178,7 +178,7 @@ describe("foundry release download", () => {
       calls.push({ url, init });
       return httpResponse({ status: 302, location: "http://cache.example/next.zip" });
     };
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-dist-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-dist-"));
 
     let message = "";
     try {

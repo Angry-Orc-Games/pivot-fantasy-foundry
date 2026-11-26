@@ -37,7 +37,7 @@ function cleanEnv(extra = {}) {
 }
 
 async function runCheck(contents, extraEnv = {}) {
-  const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-env-"));
+  const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-env-"));
   const envPath = join(dir, ".env.foundry.local");
   await writeFile(envPath, contents);
 
@@ -63,7 +63,7 @@ async function runCheck(contents, extraEnv = {}) {
 describe("foundry env check", () => {
   it("requires the local env file or process secrets", async () => {
     const result = await runCheck("", {
-      FOUNDRY_ENV_PATH: join(tmpdir(), "pivot-foundry-missing.env"),
+      FOUNDRY_ENV_PATH: join(tmpdir(), "pivot-fantasy-foundry-missing.env"),
     });
 
     expect(result.code).toBe(3);
@@ -119,7 +119,7 @@ describe("foundry env check", () => {
   });
 
   it("accepts an operator-supplied v14 Node.js zip", async () => {
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-zip-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-zip-"));
     const archive = join(dir, "FoundryVTT-Node-14.367.zip");
     await writeFile(archive, "");
 
@@ -146,7 +146,7 @@ describe("foundry env check", () => {
   });
 
   it("allows later starts when the distribution cache is present", async () => {
-    const dir = await mkdtemp(join(tmpdir(), "pivot-foundry-cache-"));
+    const dir = await mkdtemp(join(tmpdir(), "pivot-fantasy-foundry-cache-"));
     const distDir = join(dir, "foundry-dist");
     await mkdir(distDir, { recursive: true });
     await writeFile(join(distDir, versions.cacheFileName), "");

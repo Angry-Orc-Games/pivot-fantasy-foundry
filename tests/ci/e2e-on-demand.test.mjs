@@ -23,7 +23,7 @@ const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 const SAME = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
 const FORK = "cccccccccccccccccccccccccccccccccccccccc";
 const TOKEN = "super-secret-token";
-const REPO = "Angry-Orc-Games/pivot-foundry";
+const REPO = "Angry-Orc-Games/pivot-fantasy-foundry";
 const ON_DEMAND = "Foundry E2E (on-demand)";
 const NIGHTLY = "Foundry E2E (nightly)";
 
@@ -174,7 +174,7 @@ describe("on-demand pull request target", () => {
       join(ctx.stub, "pull.json"),
       JSON.stringify(
         pull({
-          head: { sha: FORK, repo: { full_name: "someone/pivot-foundry" } },
+          head: { sha: FORK, repo: { full_name: "someone/pivot-fantasy-foundry" } },
         }),
       ),
     );
@@ -183,7 +183,7 @@ describe("on-demand pull request target", () => {
 
     expect(result.status).toBe(1);
     expect(result.stdout).toBe("");
-    expect(result.stderr).toContain("someone/pivot-foundry");
+    expect(result.stderr).toContain("someone/pivot-fantasy-foundry");
     expect(result.stderr).toContain(REPO);
     expect(result.stderr).not.toContain(FORK);
     expect(result.stderr).not.toContain(TOKEN);

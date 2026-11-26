@@ -1,7 +1,7 @@
 # Pivot Fantasy Foundry System
 
-[![CI](https://github.com/Angry-Orc-Games/pivot-foundry/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Angry-Orc-Games/pivot-foundry/actions/workflows/ci.yml?query=branch%3Amain)
-[![Release](https://github.com/Angry-Orc-Games/pivot-foundry/actions/workflows/release.yml/badge.svg)](https://github.com/Angry-Orc-Games/pivot-foundry/actions/workflows/release.yml)
+[![CI](https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/workflows/ci.yml?query=branch%3Amain)
+[![Release](https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/workflows/release.yml/badge.svg)](https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/actions/workflows/release.yml)
 ![Foundry VTT](https://img.shields.io/badge/Foundry%20VTT-v14.367-blue)
 ![Node](https://img.shields.io/badge/Node-20%2F22%20verify%20%7C%2024%20Foundry%20container-339933)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
@@ -193,7 +193,7 @@ Releases are produced by pushing a version tag that matches `v*`, for example `v
 Foundry installs use the manifest URL in `system.json`:
 
 ```text
-https://github.com/angry-orc-games/pivot-foundry/releases/latest/download/system.json
+https://github.com/Angry-Orc-Games/pivot-fantasy-foundry/releases/latest/download/system.json
 ```
 
 See [docs/release.md](docs/release.md) for the release checklist.

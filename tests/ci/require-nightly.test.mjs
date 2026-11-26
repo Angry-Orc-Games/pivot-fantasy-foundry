@@ -11,7 +11,7 @@ const releaseWorkflow = fileURLToPath(
 );
 
 const SHA = "a".repeat(40);
-const REPO = "Angry-Orc-Games/pivot-foundry";
+const REPO = "Angry-Orc-Games/pivot-fantasy-foundry";
 const TOKEN = "test-token";
 const RUN_ID = "39221528714";
 const RUN_URL = `https://github.com/${REPO}/actions/runs/${RUN_ID}`;

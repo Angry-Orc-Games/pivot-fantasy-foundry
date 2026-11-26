@@ -25,7 +25,7 @@ const abortLog = [
 describe("Foundry data directory", () => {
   it("creates the bind mount and chowns it to 1000:1000", () => {
     const calls = [];
-    prepareDataDir("/tmp/pivot-foundry-data", {
+    prepareDataDir("/tmp/pivot-fantasy-foundry-data", {
       execFileSync(command, args) {
         calls.push([command, ...args]);
       },
@@ -35,14 +35,14 @@ describe("Foundry data directory", () => {
     });
 
     expect(calls).toEqual([
-      ["mkdir", "-p", "/tmp/pivot-foundry-data"],
-      ["chown", "-R", "1000:1000", "/tmp/pivot-foundry-data"],
+      ["mkdir", "-p", "/tmp/pivot-fantasy-foundry-data"],
+      ["chown", "-R", "1000:1000", "/tmp/pivot-fantasy-foundry-data"],
     ]);
   });
 
   it("uses sudo only when chown is not permitted", () => {
     const calls = [];
-    prepareDataDir("/tmp/pivot-foundry-data", {
+    prepareDataDir("/tmp/pivot-fantasy-foundry-data", {
       execFileSync(command, args) {
         calls.push([command, ...args]);
         if (command === "chown") {
@@ -63,14 +63,14 @@ describe("Foundry data directory", () => {
       "chown",
       "-R",
       "1000:1000",
-      "/tmp/pivot-foundry-data",
+      "/tmp/pivot-fantasy-foundry-data",
     ]);
     expect(calls.filter((call) => call[0] === "sudo")).toHaveLength(1);
   });
 
   it("does not chown a directory that is already 1000:1000", () => {
     const calls = [];
-    prepareDataDir("/tmp/pivot-foundry-data", {
+    prepareDataDir("/tmp/pivot-fantasy-foundry-data", {
       execFileSync(command, args) {
         calls.push([command, ...args]);
       },
